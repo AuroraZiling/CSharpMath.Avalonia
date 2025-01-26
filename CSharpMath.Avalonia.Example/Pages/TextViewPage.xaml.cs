@@ -1,14 +1,15 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace CSharpMath.Avalonia.Example.Pages {
-  public class TextViewPage : UserControl {
+namespace CSharpMath.Avalonia.Example.Pages;
+
+public class TextViewPage : UserControl {
     public TextViewPage() {
-      InitializeComponent();
+        InitializeComponent();
     }
 
     private void InitializeComponent() {
-      Resources.Add("Text", @"\textfrak{Never Gonna Give You Up}
+        Resources.Add("Text", @"\textfrak{Never Gonna Give You Up}
 $$\int_3^4x\ dx$$
 We're no strangers to \color{red}{love} \\
 You know the \t{rules} and so do I \\
@@ -84,7 +85,7 @@ Gotta make you understand \\
 \color{cyan}{Never gonna make you cry} \\
 \color{blue}{Never gonna say goodbye} \\
 \color{purple}{Never gonna tell a lie and hurt you} }");
-      Resources.Add("Text2", @"so guys we did it we reached a quater of a million subscribers, 250,000 subscribers and still growing\\
+        Resources.Add("Text2", @"so guys we did it we reached a quater of a million subscribers, 250,000 subscribers and still growing\\
 the fact that we reached this number in such a short amount of time is just phenomenal i-im just amazed, thank you all so much\\
 for supporting this channel and helping it grow I-I love you guys, you guys are just awesome.\\
 so as you can probably tell this isnt really a montage parody, this is really more like a kind thank you / update video\\
@@ -122,7 +123,6 @@ hes just so talent with SFM, he designed the intro for me, its unbelivable how t
 amazing.and lastly check out creamforce for his sexy voice over he did in the video honestly he does a lot of montage parody esc videos, definintely check him out\\
 his videos are just amazing and he just has a great personality all around.and thats it guys thats all i wanted to explain, thank you all for sitting through this video\\
 and taking all the information in, dont forget to comment down below your thoughts and feelings, id love to hear your feelings on where to take this channel montage parodies are still coming, ive got at least 2 videos in the works right now and will be up very soon.thank you all again for a quarter of a million subscribers im just still amazed that we reached this number in just a short amount of time, thanks guys.");
-      AvaloniaXamlLoader.Load(this);
+        AvaloniaXamlLoader.Load(this);
     }
-  }
 }

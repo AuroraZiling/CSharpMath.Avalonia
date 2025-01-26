@@ -1,3 +1,9 @@
+# Notice
+
+This fork is intended to maintain the Avalonia-side of the CSharpMath project. The original project can be found [here](https://github.com/verybadcat/CSharpMath)
+
+---
+
 <h3 align="center">Cross-platform LaTeX rendering!</h3>
 
 <p align="center">

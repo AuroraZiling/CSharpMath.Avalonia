@@ -14,12 +14,13 @@
             DockPanel.Dock="Bottom"
             Orientation="Horizontal">
             <RadioButton
-                x:Name="lightThemeRbn"
+                x:Name="LightThemeRbn"
                 Margin="2,8"
                 Padding="8,0"
                 VerticalContentAlignment="Center"
                 Content="Light"
-                IsChecked="true" />
+                IsChecked="true"
+                IsCheckedChanged="LightThemeRbn_OnIsCheckedChanged" />
             <RadioButton
                 Margin="2,8"
                 Padding="8,0"

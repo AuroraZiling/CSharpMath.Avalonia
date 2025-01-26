@@ -1,22 +1,21 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 
-namespace CSharpMath.Avalonia.Example {
-  public class MainView : UserControl {
-    public MainView() {
-      InitializeComponent();
+namespace CSharpMath.Avalonia.Example;
 
-      var light = (Styles)AvaloniaXamlLoader.Load(new System.Uri("avares://Avalonia.Themes.Fluent/FluentLight.xaml"));
-      var dark = (Styles)AvaloniaXamlLoader.Load(new System.Uri("avares://Avalonia.Themes.Fluent/FluentDark.xaml"));
-      var themes = this.Find<RadioButton>("lightThemeRbn");
-      themes.Checked += (sender, e) => Application.Current.Styles[0] = light;
-      themes.Unchecked += (sender, e) => Application.Current.Styles[0] = dark;
+public class MainView : UserControl {
+    public MainView() {
+        InitializeComponent();
     }
 
     private void InitializeComponent() {
-      AvaloniaXamlLoader.Load(this);
+        AvaloniaXamlLoader.Load(this);
     }
-  }
+
+    private void LightThemeRbn_OnIsCheckedChanged(object? sender, RoutedEventArgs e) {
+        Application.Current!.RequestedThemeVariant = sender is RadioButton { IsChecked: true } ? ThemeVariant.Light : ThemeVariant.Dark;
+    }
 }

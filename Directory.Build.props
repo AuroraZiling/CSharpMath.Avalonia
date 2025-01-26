@@ -1,8 +1,6 @@
-﻿<!--Directory.Build.props: MSBuild properties that are included in every project-->
-<!--Info: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2019#directorybuildprops-and-directorybuildtargets-->
-<Project InitialTargets="SetDefaultPackageVersion">
+﻿<Project InitialTargets="SetDefaultPackageVersion">
   <PropertyGroup Condition="$(MSBuildProjectName.Contains('Test')) And !$(MSBuildProjectName.Contains('Ios'))">
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup Condition="$(MSBuildProjectName.Contains('Test')) And !$(MSBuildProjectName.Contains('Visualizer'))">
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -15,7 +13,7 @@
   <!--Don't apply to Typography projects-->
   <PropertyGroup Condition="$(MSBuildProjectName.StartsWith('CSharpMath'))">
     <!--CSharpMath-specific properties for centralized control of values-->
-    <AvaloniaVersion>0.10.0</AvaloniaVersion>
+    <AvaloniaVersion>11.2.3</AvaloniaVersion>
 
     <!--C# code properties-->
     <LangVersion>preview</LangVersion>
