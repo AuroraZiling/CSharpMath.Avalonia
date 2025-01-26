@@ -425,43 +425,43 @@ namespace CSharpMath.CoreTests {
       var list = ParseLaTeX(@"\!\,\:\>\;\enspace\mskip15mu\quad\mkern36mu\qquad");
       Assert.Collection(list,
         CheckAtom<Space>("", space => {
-          Assert.Equal(-3, space.Length);
+          Assert.Equal(-3, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(3, space.Length);
+          Assert.Equal(3, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(4, space.Length);
+          Assert.Equal(4, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(4, space.Length);
+          Assert.Equal(4, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(5, space.Length);
+          Assert.Equal(5, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(9, space.Length);
+          Assert.Equal(9, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(15, space.Length);
+          Assert.Equal(15, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(18, space.Length);
+          Assert.Equal(18, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(36, space.Length);
+          Assert.Equal(36, Space.Length);
           Assert.True(space.IsMu);
         }),
         CheckAtom<Space>("", space => {
-          Assert.Equal(36, space.Length);
+          Assert.Equal(36, Space.Length);
           Assert.True(space.IsMu);
         })
       );
@@ -769,7 +769,7 @@ namespace CSharpMath.CoreTests {
                         Assert.Equal(new Boundary("{"), innerCasesInner.LeftBoundary);
                         Assert.Equal(Boundary.Empty, innerCasesInner.RightBoundary);
                         Assert.Collection(innerCasesInner.InnerList,
-                          CheckAtom<Space>("", space => Assert.Equal(3, space.Length)),
+                          CheckAtom<Space>("", space => Assert.Equal(3, Space.Length)),
                           CheckAtom<Table>("", tableCases => {
                             Assert.Equal("array", tableCases.Environment);
                             Assert.Equal(casesInterRowAdditionalSpacing, tableCases.InterRowAdditionalSpacing);
@@ -919,7 +919,7 @@ namespace CSharpMath.CoreTests {
               ), column1 =>
               Assert.Collection(column1,
                 CheckAtom<Space>("", space => {
-                  Assert.Equal(4, space.Length);
+                  Assert.Equal(4, Space.Length);
                   Assert.True(space.IsMu);
                 }),
                 CheckAtom<Variable>("x"),
@@ -941,7 +941,7 @@ namespace CSharpMath.CoreTests {
           Assert.Equal(Boundary.Empty, inner.RightBoundary);
           Assert.Collection(inner.InnerList,
             CheckAtom<Space>("", space => {
-              Assert.Equal(3, space.Length);
+              Assert.Equal(3, Space.Length);
               Assert.True(space.IsMu);
             }),
             CheckAtom<Table>("", table => {
@@ -978,7 +978,7 @@ namespace CSharpMath.CoreTests {
           Assert.Equal(Boundary.Empty, inner.RightBoundary);
           Assert.Collection(inner.InnerList,
             CheckAtom<Space>("", space => {
-              Assert.Equal(3, space.Length);
+              Assert.Equal(3, Space.Length);
               Assert.True(space.IsMu);
             }),
             CheckAtom<Table>("", table => {
@@ -1394,7 +1394,7 @@ namespace CSharpMath.CoreTests {
               CheckAtom<Space>("", space => {
                 Assert.Equal(FontStyle.Roman, space.FontStyle);
                 var expected = -1 / 6f * Structures.Space.EmWidth;
-                Assert.Equal(expected.Length, space.Length);
+                Assert.Equal(expected.Length, Space.Length);
                 Assert.Equal(expected.IsMu, space.IsMu);
               }),
               CheckAtom<RaiseBox>("", raise => {
@@ -1406,7 +1406,7 @@ namespace CSharpMath.CoreTests {
               CheckAtom<Space>("", space => {
                 Assert.Equal(FontStyle.Roman, space.FontStyle);
                 var expected = -1 / 8f * Structures.Space.EmWidth;
-                Assert.Equal(expected.Length, space.Length);
+                Assert.Equal(expected.Length, Space.Length);
                 Assert.Equal(expected.IsMu, space.IsMu);
               }),
               CheckAtom<Variable>("X", x => Assert.Equal(FontStyle.Roman, x.FontStyle))

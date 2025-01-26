@@ -1,6 +1,6 @@
-namespace CSharpMath.Atom
- {
-  public enum FontStyle {
+namespace CSharpMath.Atom;
+
+public enum FontStyle {
     ///<summary>\mathnormal</summary>
     Default,
     ///<summary>\mathrm</summary>
@@ -21,5 +21,4 @@ namespace CSharpMath.Atom
     Blackboard,
     ///<summary>\mathbfit</summary>
     BoldItalic
-  }
 }

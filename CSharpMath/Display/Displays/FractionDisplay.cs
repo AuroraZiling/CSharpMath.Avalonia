@@ -1,10 +1,12 @@
 using System;
 using System.Drawing;
 using CSharpMath.Atom;
+using Range = CSharpMath.Atom.Range;
 
-namespace CSharpMath.Display.Displays {
-  using FrontEnd;
-  public class FractionDisplay<TFont, TGlyph> : IDisplay<TFont, TGlyph>
+namespace CSharpMath.Display.Displays;
+
+using FrontEnd;
+public class FractionDisplay<TFont, TGlyph> : IDisplay<TFont, TGlyph>
     where TFont : IFont<TGlyph> {
     private PointF _position;
     ///<summary>A display representing the numerator of the fraction.
@@ -22,13 +24,13 @@ namespace CSharpMath.Display.Displays {
     public Range Range { get; }
 
     public FractionDisplay(ListDisplay<TFont, TGlyph> numeratorDisplay, ListDisplay<TFont, TGlyph> denominatorDisplay, PointF currentPosition, Range range) {
-      Numerator = numeratorDisplay;
-      Denominator = denominatorDisplay;
-      _position = currentPosition;
-      Range = range;
-      UpdateNumeratorAndDenominatorPositions();
+        Numerator = numeratorDisplay;
+        Denominator = denominatorDisplay;
+        _position = currentPosition;
+        Range = range;
+        UpdateNumeratorAndDenominatorPositions();
     }
-    
+
     public float Ascent => Numerator.Ascent + NumeratorUp;
 
     public float Descent => Denominator.Descent + DenominatorDown;
@@ -36,37 +38,36 @@ namespace CSharpMath.Display.Displays {
     public float Width => Math.Max(Numerator.Width, Denominator.Width);
 
     public void UpdateNumeratorAndDenominatorPositions() {
-      Numerator.Position =
-        new PointF(Position.X + (Width - Numerator.Width) / 2, Position.Y + NumeratorUp);
-      Denominator.Position =
-        new PointF(Position.X + (Width - Denominator.Width) / 2, Position.Y - DenominatorDown);
+        Numerator.Position =
+            new PointF(Position.X + (Width - Numerator.Width) / 2, Position.Y + NumeratorUp);
+        Denominator.Position =
+            new PointF(Position.X + (Width - Denominator.Width) / 2, Position.Y - DenominatorDown);
     }
     public PointF Position {
-      get => _position;
-      set {
-        _position = value;
-        UpdateNumeratorAndDenominatorPositions();
-      }
+        get => _position;
+        set {
+            _position = value;
+            UpdateNumeratorAndDenominatorPositions();
+        }
     }
 
     public bool HasScript { get; set; }
 
     public void Draw(IGraphicsContext<TFont, TGlyph> context) {
-      this.DrawBackground(context);
-      Numerator.Draw(context);
-      Denominator.Draw(context);
-      context.SaveState();
-      context.DrawLine(Position.X, Position.Y + LinePosition, Position.X + Width, Position.Y + LinePosition, LineThickness, TextColor);
-      context.RestoreState();
+        this.DrawBackground(context);
+        Numerator.Draw(context);
+        Denominator.Draw(context);
+        context.SaveState();
+        context.DrawLine(Position.X, Position.Y + LinePosition, Position.X + Width, Position.Y + LinePosition, LineThickness, TextColor);
+        context.RestoreState();
     }
     public Color? TextColor { get; set; }
     public void SetTextColorRecursive(Color? textColor) {
-      TextColor ??= textColor;
-      Numerator.SetTextColorRecursive(textColor);
-      Denominator.SetTextColorRecursive(textColor);
+        TextColor ??= textColor;
+        Numerator.SetTextColorRecursive(textColor);
+        Denominator.SetTextColorRecursive(textColor);
     }
     public Color? BackColor { get; set; }
 
     public override string ToString() => $@"\frac{{{Numerator}}}{{{Denominator}}}";
-  }
 }

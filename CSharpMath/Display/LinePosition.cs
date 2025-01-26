@@ -1,3 +1,3 @@
-namespace CSharpMath.Display {
-  public enum LinePosition { Regular, Subscript, Superscript }
-}
+namespace CSharpMath.Display;
+
+public enum LinePosition { Regular, Subscript, Superscript }

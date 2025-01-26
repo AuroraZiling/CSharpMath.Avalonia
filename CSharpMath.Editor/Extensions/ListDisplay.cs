@@ -137,7 +137,7 @@ namespace CSharpMath.Editor {
         // We didn't find the position
         return null;
     }
-    
+
     public static void HighlightCharacterAt<TFont, TGlyph>(this ListDisplay<TFont, TGlyph> self,
       MathListIndex index, Color color) where TFont : IFont<TGlyph> {
       if (self.Range.Contains(index.AtomIndex)

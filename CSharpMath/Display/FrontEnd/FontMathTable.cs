@@ -2,22 +2,23 @@ using CSharpMath.Atom;
 using System;
 using System.Collections.Generic;
 
-namespace CSharpMath.Display.FrontEnd {
-  /// <summary>Holds lots of constants for spacing between various visible elements.</summary>
-  public abstract class FontMathTable<TFont, TGlyph> where TFont : IFont<TGlyph> {
+namespace CSharpMath.Display.FrontEnd;
+
+/// <summary>Holds lots of constants for spacing between various visible elements.</summary>
+public abstract class FontMathTable<TFont, TGlyph> where TFont : IFont<TGlyph> {
     public float MuUnit(TFont font) => font.PointSize / 18f;
     public abstract float RadicalDisplayStyleVerticalGap(TFont font);
     public abstract float RadicalVerticalGap(TFont font);
     public float GetStyleSize(LineStyle style, TFont font) => style switch {
-      LineStyle.Display => font.PointSize,
-      LineStyle.Text => font.PointSize,
-      LineStyle.Script => font.PointSize * ScriptScaleDown(font),
-      LineStyle.ScriptScript => font.PointSize * ScriptScriptScaleDown(font),
-      _ => throw new ArgumentOutOfRangeException(nameof(style), style, "Style is out of range.")
+        LineStyle.Display => font.PointSize,
+        LineStyle.Text => font.PointSize,
+        LineStyle.Script => font.PointSize * ScriptScaleDown(font),
+        LineStyle.ScriptScript => font.PointSize * ScriptScriptScaleDown(font),
+        _ => throw new ArgumentOutOfRangeException(nameof(style), style, "Style is out of range.")
     };
 
-    public float ScriptScaleDown(TFont font) => ScriptPercentScaleDown(font) / 100f;
-    public float ScriptScriptScaleDown(TFont font) => ScriptScriptPercentScaleDown(font) / 100f;
+    private float ScriptScaleDown(TFont font) => ScriptPercentScaleDown(font) / 100f;
+    private float ScriptScriptScaleDown(TFont font) => ScriptScriptPercentScaleDown(font) / 100f;
     protected abstract short ScriptPercentScaleDown(TFont font);
     protected abstract short ScriptScriptPercentScaleDown(TFont font);
     /*
@@ -29,7 +30,7 @@ namespace CSharpMath.Display.FrontEnd {
     public abstract float GetItalicCorrection(TFont font, TGlyph glyph);
     public virtual float FractionDelimiterSize(TFont font) => font.PointSize * 1.01f;
     public virtual float FractionDelimiterDisplayStyleSize(TFont font) =>
-      font.PointSize * 2.39f;
+        font.PointSize * 2.39f;
     public abstract float SuperscriptBaselineDropMax(TFont font);
     public abstract float SubscriptBaselineDropMin(TFont font);
     public abstract float SubscriptShiftDown(TFont font);
@@ -84,5 +85,4 @@ namespace CSharpMath.Display.FrontEnd {
     public abstract float OverbarExtraAscender(TFont font);
     public abstract float AccentBaseHeight(TFont font);
     public abstract float GetTopAccentAdjustment(TFont font, TGlyph glyph);
-  }
 }

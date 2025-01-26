@@ -7,13 +7,13 @@ namespace CSharpMath.Display {
     void Draw(IGraphicsContext<TFont, TGlyph> context);
     /// <summary>By convention, Ascent and Descent should be positive
     /// numbers for the typical case where your font is partly above
-    /// and partly below the baseline. This may differ from the 
+    /// and partly below the baseline. This may differ from the
     /// convention of a particular OS, i.e. iOS.</summary>
     float Ascent { get; }
     float Descent { get; }
     float Width { get; }
     Range Range { get; }
-    /// <summary>Position of the display, relative to its parent.</summary> 
+    /// <summary>Position of the display, relative to its parent.</summary>
     PointF Position { get; set; }
     Color? TextColor { get; set; }
     void SetTextColorRecursive(Color? textColor);
@@ -28,7 +28,7 @@ namespace CSharpMath {
     /// <summary>
     /// The display's bounds, in its own coordinate system.<br/>
     /// **Internal only! The Rectangle's position is at the bottom left: not what the outer world expects**
-    /// </summary> 
+    /// </summary>
     public static RectangleF DisplayBounds<TFont, TGlyph>
       (this IDisplay<TFont, TGlyph> display) where TFont : IFont<TGlyph> =>
       new RectangleF(0, -display.Descent, display.Width, display.Ascent + display.Descent);
@@ -39,11 +39,10 @@ namespace CSharpMath {
     public static void DrawBackground<TFont, TGlyph>
       (this IDisplay<TFont, TGlyph> display, IGraphicsContext<TFont, TGlyph> context)
       where TFont : IFont<TGlyph> {
-      if (display.BackColor is { } color) {
+        if (display.BackColor is not { } color) return;
         context.SaveState();
         context.FillRect(display.Frame(), color);
         context.RestoreState();
-      }
     }
   }
 }

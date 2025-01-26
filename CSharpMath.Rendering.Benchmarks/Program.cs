@@ -1,6 +1,5 @@
 using BenchmarkDotNet.Attributes;
 namespace CSharpMath.Rendering.Benchmarks {
-  using SkiaSharp;
   using Data = Tests.TestRenderingMathData;
   public class Program {
     // In Windows, selecting text inside the Visual Sutdio Debug console pauses program execution.

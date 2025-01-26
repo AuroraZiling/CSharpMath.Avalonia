@@ -3,29 +3,31 @@ using CSharpMath.Atom;
 
 namespace CSharpMath.Display.Displays {
   using FrontEnd;
-  public class GlyphDisplay<TFont, TGlyph> : IGlyphDisplay<TFont, TGlyph>
-    where TFont : IFont<TGlyph> {
+  public class GlyphDisplay<TFont, TGlyph>(
+      TGlyph glyph,
+      Range range,
+      TFont font,
+      float ascent,
+      float descent,
+      float width)
+      : IGlyphDisplay<TFont, TGlyph>
+      where TFont : IFont<TGlyph> {
+      public float Ascent {
+          get => field - ShiftDown;
+      } = ascent;
 
-    readonly float _ascent;
-    readonly float _descent;
-    public float Ascent => _ascent - ShiftDown;
-    public float Descent => _descent + ShiftDown;
-    public float Width { get; }
-    public Range Range { get; }
+      public float Descent {
+          get => field + ShiftDown;
+      } = descent;
+
+      public float Width { get; } = width;
+      public Range Range { get; } = range;
     public PointF Position { get; set; }
     public bool HasScript { get; set; }
     public float ShiftDown { get; set; }
-    public TGlyph Glyph { get; }
-    public TFont Font { get; }
-    public GlyphDisplay(TGlyph glyph, Range range, TFont font,
-      float ascent, float descent, float width) {
-      Glyph = glyph;
-      Range = range;
-      Font = font;
-      _ascent = ascent;
-      _descent = descent;
-      Width = width;
-    }
+    public TGlyph Glyph { get; } = glyph;
+    public TFont Font { get; } = font;
+
     public void Draw(IGraphicsContext<TFont, TGlyph> context) {
       this.DrawBackground(context);
       context.SaveState();
