@@ -2,9 +2,17 @@
   
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>The Avalonia front end for CSharpMath.</Description>
+    <Description>The Avalonia front end for CSharpMath (fork).</Description>
     <PackageTags>$(PackageTags) avalonia</PackageTags>
     <DefineConstants>$(DefineConstants) Avalonia</DefineConstants>
+    <PackageId>Nekora.CSharpMath.Avalonia</PackageId>
+    <Version>11.2.3</Version>
+    <Title>Nekora.CSharpMath.Avalonia</Title>
+    <Authors>Shigen Reikou and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
+    <Copyright>© CSharpMath Contributors 2020; © Shigen Reikou 2025</Copyright>
+    <PackageProjectUrl>https://github.com/Shigen-Reikou/CSharpMath</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Shigen-Reikou/CSharpMath/blob/master/License</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/Shigen-Reikou/CSharpMath.git</RepositoryUrl>
   </PropertyGroup>
   
   <ItemGroup>

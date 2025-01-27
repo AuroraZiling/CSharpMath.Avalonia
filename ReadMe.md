@@ -1,6 +1,10 @@
-# Notice
+# Declaration
 
-This fork is intended to maintain the Avalonia-side of the CSharpMath project. The original project can be found [here](https://github.com/verybadcat/CSharpMath)
+This repository is a fork of [CSharpMath](https://github.com/verybadcat/CSharpMath), with the primary goal of maintaining and updating its support for the Avalonia framework. As the Avalonia support in the original repository has become outdated and non-functional, I have decided to fork the repository and focus on fixing and improving the Avalonia-related features.
+
+- Due to limited time and resources, the Avalonia support in this repository will be maintained at a "usable" level, with no plans for deep optimization or additional features.
+- This repository will focus solely on Avalonia support; other features (such as WPF, iOS, etc.) will not be maintained.
+- Contributions related to Avalonia, including issues and pull requests, are welcome, but I cannot guarantee responses or implementation.
 
 ---
 
