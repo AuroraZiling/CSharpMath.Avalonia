@@ -28,6 +28,8 @@
     <ProjectReference Include="..\CSharpMath.Rendering\CSharpMath.Rendering.csproj" PrivateAssets="all"/>
     <ProjectReference Include="..\CSharpMath\CSharpMath.csproj" PrivateAssets="all"/>
   </ItemGroup>
+
+  <Import Project="..\CSharpMath.Xaml\CSharpMath.Xaml.projitems" Label="Shared" />
   
   <ItemGroup>
     <None Include="Icon.png" Pack="true" PackagePath=""/>
