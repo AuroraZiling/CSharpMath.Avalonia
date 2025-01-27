@@ -5,7 +5,7 @@ namespace CSharpMath.Atom;
 /// We don't need two since we track boundaries separately.
 /// </summary>
 public readonly struct Boundary(string nucleus) : IMathObject, System.IEquatable<Boundary> {
-    public static readonly Boundary Empty = default;
+    public static Boundary Empty => default;
     public string? Nucleus { get; } = nucleus;
     public string DebugString => Nucleus ?? "(null)";
     public bool EqualsBoundary(Boundary boundary) => Nucleus == boundary.Nucleus;

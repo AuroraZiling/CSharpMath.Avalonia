@@ -11,7 +11,7 @@
     <Authors>Shigen Reikou and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
     <Copyright>© CSharpMath Contributors 2020; © Shigen Reikou 2025</Copyright>
     <PackageProjectUrl>https://github.com/Shigen-Reikou/CSharpMath</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/Shigen-Reikou/CSharpMath/blob/master/License</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/Shigen-Reikou/CSharpMath.git</RepositoryUrl>
   </PropertyGroup>
   
