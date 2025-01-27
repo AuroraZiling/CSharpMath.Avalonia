@@ -6,25 +6,31 @@
     <PackageTags>$(PackageTags) avalonia</PackageTags>
     <DefineConstants>$(DefineConstants) Avalonia</DefineConstants>
     <PackageId>Nekora.CSharpMath.Avalonia</PackageId>
-    <Version>11.2.3</Version>
+    <Version>11.2.3-rc</Version>
     <Title>Nekora.CSharpMath.Avalonia</Title>
     <Authors>Shigen Reikou and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
     <Copyright>© CSharpMath Contributors 2020; © Shigen Reikou 2025</Copyright>
     <PackageProjectUrl>https://github.com/Shigen-Reikou/CSharpMath</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Shigen-Reikou/CSharpMath.git</RepositoryUrl>
     <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <AvaloniaResource Include="**\*.xaml" />
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-    <ProjectReference Include="..\CSharpMath.Rendering\CSharpMath.Rendering.csproj" />
+    <PackageReference Include="Tenekon.MSBuild.Packaging.ProjectBuildInPackage" Version="2.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <ProjectReference Include="..\CSharpMath.Rendering\CSharpMath.Rendering.csproj" PrivateAssets="all"/>
+    <ProjectReference Include="..\CSharpMath\CSharpMath.csproj" PrivateAssets="all"/>
   </ItemGroup>
   
   <ItemGroup>
     <None Include="Icon.png" Pack="true" PackagePath=""/>
+    <None Include="..\ReadMe.md" Pack="true" PackagePath=""/>
   </ItemGroup>
-
 </Project>
