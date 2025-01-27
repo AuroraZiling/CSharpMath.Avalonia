@@ -11,8 +11,8 @@
     <Authors>Shigen Reikou and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
     <Copyright>© CSharpMath Contributors 2020; © Shigen Reikou 2025</Copyright>
     <PackageProjectUrl>https://github.com/Shigen-Reikou/CSharpMath</PackageProjectUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/Shigen-Reikou/CSharpMath.git</RepositoryUrl>
+    <PackageIcon>Icon.png</PackageIcon>
   </PropertyGroup>
   
   <ItemGroup>
@@ -23,6 +23,8 @@
     <ProjectReference Include="..\CSharpMath.Rendering\CSharpMath.Rendering.csproj" />
   </ItemGroup>
   
-  <Import Project="..\CSharpMath.Xaml\CSharpMath.Xaml.projitems" Label="Shared" />
+  <ItemGroup>
+    <None Include="Icon.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
 
 </Project>
