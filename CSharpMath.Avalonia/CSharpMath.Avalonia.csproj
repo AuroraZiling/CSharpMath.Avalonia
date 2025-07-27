@@ -5,13 +5,13 @@
     <Description>The Avalonia front end for CSharpMath (fork).</Description>
     <PackageTags>$(PackageTags) avalonia</PackageTags>
     <DefineConstants>$(DefineConstants) Avalonia</DefineConstants>
-    <PackageId>Nekora.CSharpMath.Avalonia</PackageId>
-    <Version>11.2.3-rc2</Version>
-    <Title>Nekora.CSharpMath.Avalonia</Title>
-    <Authors>Shigen Reikou and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
-    <Copyright>© CSharpMath Contributors 2020; © Shigen Reikou 2025</Copyright>
-    <PackageProjectUrl>https://github.com/Shigen-Reikou/CSharpMath</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Shigen-Reikou/CSharpMath.git</RepositoryUrl>
+    <PackageId>Artemis.CSharpMath.Avalonia</PackageId>
+    <Version>1.0.0</Version>
+    <Title>Artemis.CSharpMath.Avalonia</Title>
+    <Authors>Artemis Li and CSharpMath Contributors (verybadcat, Happypig375, charlesroddie, FoggyFinder)</Authors>
+    <Copyright>© CSharpMath Contributors 2020; © Artemis Li 2025</Copyright>
+    <PackageProjectUrl>https://github.com/AuroraZiling/CSharpMath.Avalonia</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AuroraZiling/CSharpMath.Avalonia.git</RepositoryUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
   </PropertyGroup>
